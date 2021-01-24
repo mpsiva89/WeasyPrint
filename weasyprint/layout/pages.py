@@ -525,6 +525,9 @@ def make_page(context, root_box, page_type, resume_at, page_number,
     page.position_y = 0
     cb_width, cb_height = device_size
     page_width(page, context, cb_width)
+    """ Set margin as auto for the first page """
+    if page_number == 1:
+        page.margin_top = 'auto'
     page_height(page, context, cb_height)
 
     root_box.position_x = page.content_box_x()
